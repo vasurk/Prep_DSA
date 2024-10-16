@@ -4,7 +4,7 @@ using namespace std;
 
 struct Node{
     int data;
-    Node * next;
+    Node *next;
 };
 
 class LinkedList {
@@ -70,6 +70,36 @@ class LinkedList {
 
     }
 
-    
+    void display()
+    {
+        if(!head){
+            cout << " List is empty " << endl;
+            return;
+        }
 
+        Node * temp = head;
+        while(temp){
+            cout << temp->data << " -> " ;
+            temp = temp->next;
+        }
+        cout << " NULL " << endl;
+    }
+
+
+
+
+};
+
+int main()
+{
+    LinkedList list1;
+
+    list1.insertatEnd(10);
+    list1.insertatEnd(20);
+
+    list1.insertatBeginning(5);
+    list1.insertatPosition(15,3);
+    cout << "Linked list after insertions : ";
+    list1.display();
+    return 0;
 }
